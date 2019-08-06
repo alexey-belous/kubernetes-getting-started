@@ -8,4 +8,5 @@ group Build
 
 group Ref
     source https://api.nuget.org/v3/index.json
+    nuget FSharp.Core
     nuget Suave
