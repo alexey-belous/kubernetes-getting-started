@@ -7,13 +7,13 @@ open Fake.IO.Globbing.Operators
 open Fake.Core.TargetOperators
 
 Target.create "Clean" (fun _ ->
-    !! "src/**/bin"
-    ++ "src/**/obj"
+    !! "**/bin"
+    ++ "**/obj"
     |> Shell.cleanDirs 
 )
 
 Target.create "Build" (fun _ ->
-    !! "src/**/*.*proj"
+    !! "**/*.*proj"
     |> Seq.iter (DotNet.build id)
 )
 
