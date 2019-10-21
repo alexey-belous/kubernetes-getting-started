@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minikube-registration-ms
+spec:
+  selector:
+    matchLabels:
+      app: minikube-registration-ms
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: minikube-registration-ms
+    spec:
+      # nodeSelector:
+      #   label: value
+      containers:
+        - name: minikube-registration-app
+          image: alexeybelous/minikube-registration:1.1
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 5000
+        # - name: minikube-registration-storage
+        #   image: alexeybelous/mongo:1.0
+        #   resources:
+        #     limits:
+        #       memory: "128Mi"
+        #       cpu: "500m"
+        #   env:
+        #     - name:
+        #   ports:
+        #     - containerPort: 27017

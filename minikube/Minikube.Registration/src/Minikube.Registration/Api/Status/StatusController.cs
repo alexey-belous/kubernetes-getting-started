@@ -9,7 +9,7 @@ namespace Minikube.Registration.Api.Status
         [HttpGet("status")]
         public ActionResult Get()
         {
-            return Ok(new { status = "ok" });
+            return Ok(new { status = "ok", instanceId = Startup.InstanceId, version = "1.0.0.0" });
         }
     }
 }
