@@ -9,4 +9,5 @@
 Installation guide is available here: https://linuxconfig.org/how-to-install-kubernetes-on-ubuntu-18-04-bionic-beaver-linux
 
 ## Content
-1. ### [Chapter 1](./docs/chapter_1/README.md ) - deployment services to the cluster
+1. ### [Chapter 1](./docs/chapter_1/README.md ) - Deployment services to the cluster
+2. ### [Chapter 2](./docs/chapter_2/README.md) - Persistent volumes

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: registration-storage
+spec:
+  selector:
+    matchLabels:
+      app: registration-storage
+  template:
+    metadata:
+      labels:
+        app: registration-storage
+    spec:
+      containers:
+        - name: registration-storage-app
+          image: alexeybelous/mongo:1.0
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 27017

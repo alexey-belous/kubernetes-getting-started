@@ -6,5 +6,6 @@ RUN dotnet publish -o ./publish -c Release
 FROM mcr.microsoft.com/dotnet/core/aspnet:2.1
 WORKDIR /app
 COPY --from=build_stage /src/publish /app
+ENV ASPNETCORE_ENVIRONMENT=Cluster
 EXPOSE 5000
 ENTRYPOINT ["dotnet", "Minikube.Registration.dll"]

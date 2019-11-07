@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Minikube.Registration.Api.Probe;
 using Minikube.Registration.Api.Registration;
 using Minikube.Registration.Configuration;
 using MongoDB.Driver;
@@ -28,6 +29,8 @@ namespace Minikube.Registration
             services.AddSingleton(StorageConfig.Load(Configuration));
             services.AddTransient(typeof(MongoClient),
                 sp => new MongoClient(connectionString: sp.GetService<StorageConfig>().ConnectionString));
+
+            services.AddTransient<IStorageAccessibilityChecker, StorageAccessibilityChecker>();
 
             services.AddTransient<IUserWriter, UserStorage>();
             services.AddTransient<IUserFinder, UserStorage>();
