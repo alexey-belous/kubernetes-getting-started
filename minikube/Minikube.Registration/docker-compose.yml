@@ -4,8 +4,10 @@ services:
     image: alexeybelous/mongo:1.0
     container_name: registration-storage
     ports:
-      - "127.0.0.1:27017:27017" 
-    environment: 
+      - "127.0.0.1:27017:27017"
+    volumes:
+      - ./mongo_data:/data/db/
+    environment:
       - MONGODB_ADMIN_USER=root
       - AUTH=yes
       - MONGODB_ADMIN_PASS=root

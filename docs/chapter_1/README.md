@@ -11,6 +11,7 @@ https://www.youtube.com/watch?v=tqr581_bBM0&list=PLot-YkcC7wZ9xwMzkzR_EkOrPahSof
 - `minikube service minikube-registration-ms --url` - get url of the service
 
 ## kubectl commands:
+- `kubectl apply --validate --dry-run -f` - validate a yaml file
 - `kubectl apply -f deployment.yml` - apply a deployment (or any other config file)
 - `kubectl expose deployment minikube-registration-ms --type=NodePort` - creates a service to expose a Pod
 - `kubectl attach pod-name -c container` - attach to a process

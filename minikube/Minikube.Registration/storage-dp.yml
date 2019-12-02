@@ -20,3 +20,11 @@ spec:
               cpu: "500m"
           ports:
             - containerPort: 27017
+          volumeMounts:
+            - mountPath: /data/db/
+              name: registration-storage-pv
+      volumes:
+        - name: registration-storage-pv
+          persistentVolumeClaim:
+            claimName: registration-storage-pvm
+      restartPolicy: Always
